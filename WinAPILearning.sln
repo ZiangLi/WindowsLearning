@@ -5,6 +5,8 @@ VisualStudioVersion = 12.0.21005.1
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "WinAPILearning", "WinAPILearning\WinAPILearning.vcxproj", "{C408D6C3-B938-41C7-9CDF-2A642638EA85}"
 EndProject
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "CloudTesttool", "CloudTesttool\CloudTesttool.vcxproj", "{B6627945-9E1D-44F7-8AC1-9DB8487E65CD}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Win32 = Debug|Win32
@@ -15,6 +17,10 @@ Global
 		{C408D6C3-B938-41C7-9CDF-2A642638EA85}.Debug|Win32.Build.0 = Debug|Win32
 		{C408D6C3-B938-41C7-9CDF-2A642638EA85}.Release|Win32.ActiveCfg = Release|Win32
 		{C408D6C3-B938-41C7-9CDF-2A642638EA85}.Release|Win32.Build.0 = Release|Win32
+		{B6627945-9E1D-44F7-8AC1-9DB8487E65CD}.Debug|Win32.ActiveCfg = Debug|Win32
+		{B6627945-9E1D-44F7-8AC1-9DB8487E65CD}.Debug|Win32.Build.0 = Debug|Win32
+		{B6627945-9E1D-44F7-8AC1-9DB8487E65CD}.Release|Win32.ActiveCfg = Release|Win32
+		{B6627945-9E1D-44F7-8AC1-9DB8487E65CD}.Release|Win32.Build.0 = Release|Win32
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
