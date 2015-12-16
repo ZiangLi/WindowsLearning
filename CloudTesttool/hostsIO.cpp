@@ -11,12 +11,12 @@ bool isIP2DomainIncluded(const string &ip, const string &domain)
 		exit(-1);
 	}
 
-	string s;
-	while (getline(fs, s))
+	string line;
+	while (getline(fs, line))
 	{
 		//how to identify '#' at the first of one line?
 		//ok,use sstream to judge whether first character of splited string is '#'.
-		istringstream is(s);
+		istringstream is(line);
 		string _ip,_domain;
 		is >> _ip;
 		
