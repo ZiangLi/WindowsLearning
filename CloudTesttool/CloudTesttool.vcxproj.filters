@@ -24,6 +24,9 @@
     <ClCompile Include="registryIO.cpp">
       <Filter>源文件</Filter>
     </ClCompile>
+    <ClCompile Include="logFilter.cpp">
+      <Filter>源文件</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="hostsIO.h">
@@ -33,6 +36,9 @@
       <Filter>头文件</Filter>
     </ClInclude>
     <ClInclude Include="registryIO.h">
+      <Filter>头文件</Filter>
+    </ClInclude>
+    <ClInclude Include="logFilter.h">
       <Filter>头文件</Filter>
     </ClInclude>
   </ItemGroup>

@@ -80,12 +80,14 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="hostsIO.cpp" />
+    <ClCompile Include="logFilter.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="registryIO.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="constVar.h" />
     <ClInclude Include="hostsIO.h" />
+    <ClInclude Include="logFilter.h" />
     <ClInclude Include="registryIO.h" />
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />

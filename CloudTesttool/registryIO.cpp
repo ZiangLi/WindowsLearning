@@ -1,6 +1,7 @@
 #include "registryIO.h"
 #include "constVar.h"
 #include <iostream>
+
 void deleteRegKey(bool popHubb , bool popWin )
 {
 	if (popHubb)
@@ -21,7 +22,7 @@ void deleteRegKey(bool popHubb , bool popWin )
 		LONG resultWin = RegDeleteKey(_HKEY, popWinSubkey);
 
 		if (ERROR_SUCCESS != resultWin)
-			printf("Cannot delete HubbSubkey\n");
+			printf("Cannot delete popWinSubkey\n");
 	}
 }
 
@@ -29,32 +30,50 @@ bool isInternalUser(bool setValue)
 {
 	bool bInternalUser = true;
 	HKEY hKey;
-	LONG resultOpen=RegOpenKeyEx(_HKEY, TestSubkey, 0, KEY_ALL_ACCESS, &hKey);
+	LONG resultOpen = RegOpenKeyEx(_HKEY, TestSubkey, 0, KEY_ALL_ACCESS, &hKey);
 
 	if (ERROR_SUCCESS == resultOpen)
 	{
-		DWORD BufferSize = 256;
-		DWORD cbData;
-		DWORD dwRet;
+		DWORD dwType = REG_NONE;
+		DWORD dwCount = 0;
 
-		LPBYTE PerfData = (LPBYTE)malloc(BufferSize);
-		cbData = BufferSize;
+		DWORD DValue = 0;
 
-		printf("\nRetrieving the data...");
-
-
-		dwRet = RegQueryValueEx(hKey,
+		LONG lResult= RegQueryValueEx(hKey,
 			TestValueName,
 			NULL,
+			&dwType,
 			NULL,
-			PerfData,
-			&cbData);
+			&dwCount);
 
-		if (dwRet == ERROR_SUCCESS && strcmp((char*)PerfData,"0"))
+		if (lResult == ERROR_SUCCESS)
 		{
-			bInternalUser = false;
-			std::cout << PerfData << std::endl;
+			lResult = RegQueryValueEx(hKey,
+				TestValueName,
+				NULL,
+				&dwType,
+				(LPBYTE)&DValue,
+				&dwCount);
+
+			if (DValue != 0)
+			{
+				bInternalUser = false;
+				if (setValue == true)
+				{
+					DWORD newValue = 1;
+					RegSetValueEx(hKey,
+						TestValueName,
+						NULL,
+						REG_DWORD,
+						(LPBYTE)&newValue,
+						dwCount
+						);
+
+					printf("TestValue changed!\n");
+				}
+			}
 		}
+		RegCloseKey(hKey);
 	}
 
 	return bInternalUser;
