@@ -6,6 +6,8 @@ void deleteRegKey(bool popHubb , bool popWin )
 {
 	if (popHubb)
 	{
+		printf("Deleting HubbSubkey...\n");
+
 		HKEY hKey;
 		LONG resultOpen=RegOpenKeyEx(_HKEY, popHubbSubkey, 0, KEY_SET_VALUE, &hKey);
 		if (ERROR_SUCCESS == resultOpen)
@@ -14,15 +16,21 @@ void deleteRegKey(bool popHubb , bool popWin )
 			LONG resultHubb = RegDeleteValue(hKey, popHubbValueName);
 
 			if (ERROR_SUCCESS != resultHubb)
-				printf("Cannot delete HubbSubkey\n");
+				printf("Cannot delete HubbSubkey or Subkey not exists\n");
+			else
+				printf("HubbSubkey Deleted\n");
 		}
 	}
 	if (popWin)
 	{
+		printf("Deleting popWinSubkey...\n");
+
 		LONG resultWin = RegDeleteKey(_HKEY, popWinSubkey);
 
 		if (ERROR_SUCCESS != resultWin)
-			printf("Cannot delete popWinSubkey\n");
+			printf("Cannot delete popWinSubkey or Subkey not exists\n");
+		else
+			printf("popWinSubkey Deleted\n");
 	}
 }
 
@@ -69,10 +77,13 @@ bool isInternalUser(bool setValue)
 						dwCount
 						);
 
-					printf("TestValue changed!\n");
+					printf("INTUSER changed!\n");
 				}
 			}
 		}
+		else
+			printf("No INTUSER found!\n");
+
 		RegCloseKey(hKey);
 	}
 

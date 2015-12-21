@@ -4,15 +4,15 @@ bool isIP2DomainIncluded(const string &ip, const string &domain)
 {
 	bool isIncluded = false;
 
-	ifstream fs(hostsDir);
-	if (!fs)
+	ifstream ifs(hostsDir);
+	if (!ifs)
 	{
 		cout << "Error opening " << hostsDir << " for input" << endl;
 		exit(-1);
 	}
 
 	string line;
-	while (getline(fs, line))
+	while (getline(ifs, line))
 	{
 		//how to identify '#' at the first of one line?
 		//ok,use sstream to judge whether first character of splited string is '#'.
@@ -33,5 +33,19 @@ bool isIP2DomainIncluded(const string &ip, const string &domain)
 		}
 
 	}
+	ifs.close();
+
+	ofstream ofs(hostsDir, ios::app);
+	//
+	if (isIncluded == false)
+	{
+		ofs << "\n" << ip << " " << domain;
+		printf("IP2Domain not found\n");
+		printf("Hosts config accomplished\n");
+	}
+	else
+		printf("IP2Domain exists\n");
+	ofs.close();
+
 	return isIncluded;
 }
