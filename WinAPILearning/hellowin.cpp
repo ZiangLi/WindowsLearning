@@ -63,7 +63,7 @@ int WINAPI WinMain(HINSTANCE hInstance,      // 当前实例句柄
 		NULL);					  //创建参数
 
 	//显示窗口,参数为：窗口句柄，显示状态
-	ShowWindow(hwnd, SW_SHOWNA);
+	ShowWindow(hwnd,SW_SHOWNORMAL);
 	//更新窗口
 	UpdateWindow(hwnd);
 

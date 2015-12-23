@@ -11,8 +11,8 @@ const std::string domain = "wup.imtt.qq.com";
 const LPCTSTR TestSubkey = TEXT("Software\\Tencent\\QQBrowser\\PrivateCfg");
 const LPCTSTR TestValueName = TEXT("INTUER");
 const LPCTSTR popWinSubkey = TEXT("Software\\Tencent\\QQBrowser\\ExtensionsInfo\\{66AC5389-365D-4B55-BF5C-5A2A4BC21CCD}");
-const LPCTSTR popHubbSubkey = TEXT("Software\\Tencent\\QQBrowser\\PrivateCfg");
-const LPCTSTR popHubbValueName = TEXT("lastIconPushTime");
+const LPCTSTR popBubbSubkey = TEXT("Software\\Tencent\\QQBrowser\\PrivateCfg");
+const LPCTSTR popBubbValueName = TEXT("lastIconPushTime");
 const char interUserMark[] = "0";
 
 #define _HKEY_LOG HKEY_LOCAL_MACHINE

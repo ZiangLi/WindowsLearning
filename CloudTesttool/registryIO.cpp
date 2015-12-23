@@ -2,23 +2,23 @@
 #include "constVar.h"
 #include <iostream>
 
-void deleteRegKey(bool popHubb , bool popWin )
+void deleteRegKey(bool popBubb , bool popWin )
 {
-	if (popHubb)
+	if (popBubb)
 	{
-		printf("Deleting HubbSubkey...\n");
+		printf("Deleting BubbSubkey...\n");
 
 		HKEY hKey;
-		LONG resultOpen=RegOpenKeyEx(_HKEY, popHubbSubkey, 0, KEY_SET_VALUE, &hKey);
+		LONG resultOpen=RegOpenKeyEx(_HKEY, popBubbSubkey, 0, KEY_SET_VALUE, &hKey);
 		if (ERROR_SUCCESS == resultOpen)
 		{
 
-			LONG resultHubb = RegDeleteValue(hKey, popHubbValueName);
+			LONG resultBubb = RegDeleteValue(hKey, popBubbValueName);
 
-			if (ERROR_SUCCESS != resultHubb)
-				printf("Cannot delete HubbSubkey or Subkey not exists\n");
+			if (ERROR_SUCCESS != resultBubb)
+				printf("Cannot delete BubbSubkey or Subkey not exists\n");
 			else
-				printf("HubbSubkey Deleted\n");
+				printf("BubbSubkey Deleted\n");
 		}
 	}
 	if (popWin)
