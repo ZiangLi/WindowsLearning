@@ -80,6 +80,7 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="ExpanWin.cpp" />
+    <ClCompile Include="firstWin.cpp" />
     <ClCompile Include="hellowin.cpp" />
     <ClCompile Include="MessageBox.cpp" />
     <ClCompile Include="ScrnSize.cpp" />

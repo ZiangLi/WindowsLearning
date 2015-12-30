@@ -27,5 +27,8 @@
     <ClCompile Include="ExpanWin.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="firstWin.cpp">
+      <Filter>Resource Files</Filter>
+    </ClCompile>
   </ItemGroup>
 </Project>
